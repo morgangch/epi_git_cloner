@@ -28,7 +28,7 @@ fname="[X]" // Your first name
 name="[X]" // Your last name
 
 If you do not want to setup it manually, you can also execute it for the first time, prompts will ask you to give the code datas that will then fill the file.
-I also recommend you putting the directory in your environment PATH to avoid useless bugs.
+I also recommend you putting the whole directory in your environment PATH to avoid useless bugs. (since the script uses .env file).
 
 ## How can you run it ?
 Simple as that, once the script is setup, the datas are given, you only need to run it this way :
