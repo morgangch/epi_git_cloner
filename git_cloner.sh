@@ -223,7 +223,7 @@ function is_number_greater_than_ten {
     fi
 
     # Comparer si le nombre est supérieur à 10
-    if [ "$num" -gt 10 ]; then
+    if [ "$num" -ge 10 ]; then
         return 1
     else
         return 0
@@ -248,7 +248,7 @@ function big_piscine
     get_pwd $semester2 $module_name
 
     pool_day=$(prompt_user "Day de Piscine")
-    if (is_number_greater_than_ten "$pool_day"); then
+    if (is_number_greater_than_ten "$pool_day" == 1); then
         pool_day="0$pool_day"
     fi
     project_name="$project_name$pool_day"
