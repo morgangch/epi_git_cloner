@@ -65,20 +65,14 @@ function project {
     fi
 
     # Demander à l'utilisateur de saisir le numéro du module
-    module_list=("PSU" "CPE" "AIA" "MAT" "MUL" "DOP" "SEC" "PRO" "WEB" "PDG")
-    module=$(prompt_user "Entrez le numéro du module (entre 1 et 20)
-            1 - PSU
-            2 - CPE
-            3 - AIA
-            4 - MAT
-            5 - MUL
-            6 - DOP
-            7 - SEC
-            8 - PRO
-            9 - WEB
-	    10 - PDG
-            ")
-    while ! is_valid_input "$module" 1 20; do
+    module_list=("PSU" "CPE" "AIA" "MAT" "MUL" "DOP" "SEC" "PRO" "WEB" "PDG" "OOP" "ASM" "FUN" "YEP" "CNA" "CCP" "NWP")
+    echo "Entrez le numéro du module (entre 1 et ${#module_list[@]})"
+    for i in "${!module_list[@]}"; do
+        echo "$((i + 1)) - ${module_list[$i]}"
+    done
+    module=$(prompt_user "")
+
+    while ! is_valid_input "$module" 1 ${#module_list[@]}; do
         echo "Erreur: Veuillez entrer un numéro de module valide (entre 1 et 20)."
         module=$(prompt_user "Entrez le numéro du module (entre 1 et 20)")
     done
